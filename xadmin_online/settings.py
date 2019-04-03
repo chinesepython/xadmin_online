@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'xadmin_online.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'xadmin_online',
+        'USER': 'root',
+        'HOST': 'localhost',
+        'PORT': 3306,
+        'PASSWORD': 'xuanhui99999',
     }
 }
 
