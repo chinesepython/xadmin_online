@@ -25,6 +25,9 @@ class Course(models.Model):
     click_nums = models.IntegerField(default=0, verbose_name='点击数')
     add_time = models.DateTimeField(default=datetime.now, verbose_name='添加时间')
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         verbose_name = "课程"
         verbose_name_plural = verbose_name
@@ -59,4 +62,5 @@ class CourseResource(models.Model):
 
     class Meta:
         verbose_name = "课程资源"
+        verbose_name_plural = verbose_name
 
