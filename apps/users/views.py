@@ -5,7 +5,7 @@ from django.db.models import Q
 from django.views.generic.base import View
 
 from .models import UserProfile
-from .forms import LoginForm
+from .forms import LoginForm, RegisterForm
 
 
 class CustomBackend(ModelBackend):
@@ -21,7 +21,6 @@ class CustomBackend(ModelBackend):
 
 
 class LoginView(View):
-
     def get(self, request):
         return render(request, "login.html", {})
 
@@ -42,6 +41,18 @@ class LoginView(View):
             return render(request, 'login.html', context={"login_form": login_form})
 
 
+class RegisterView(View):
+    def get(self, request):
+        register_form = RegisterForm()
+        return render(request, 'register.html', {'register_form': register_form})
+
+    def post(self, request):
+        regisger_form = RegisterForm(request.POST)
+        if regisger_form.is_valid():
+            pass
+
+        pass
+
 # def user_login(request):
 #     if request.method == "POST":
 #         user_name = request.POST.get('username', '')
@@ -54,3 +65,207 @@ class LoginView(View):
 #             return render(request, 'login.html', context={"msg": "用户名或者密码输入错误"})
 #     elif request.method == "GET":
 #         return render(request, "login.html", {})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
